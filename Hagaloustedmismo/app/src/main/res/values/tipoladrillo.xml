@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ladrillo">
+        <item>Tipo de Ladrillo</item>
+        <item>Comun 1</item>
+        <item>Comun 2</item>
+        <item>Hueco</item>
+        <item>Bloque</item>
+    </string-array>
+
+
+
+</resources>

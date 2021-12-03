@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.app_horarios_ver_2">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".Activities.SM_UNC.SMUNCActivity"></activity>
+        <activity android:name=".Activities.SM_UNC.SM_Sab_Vuelta" />
+        <activity android:name=".Activities.SM_UNC.SM_Sab_Ida" />
+        <activity android:name=".Activities.SM_UNC.SM_Lun_Vier_Vuelta" />
+        <activity android:name=".Activities.SM_UNC.SM_Lun_Vier_ida" />
+        <activity android:name=".Activities.Expreso_UNC.Lun_Vier_UNC_Vuelta" />
+        <activity android:name=".Activities.Expreso_UNC.Lun_Vier_UNC_Ida" />
+        <activity android:name=".Activities.Expreso_UNC.ExpresoUNCActivity" />
+        <activity android:name=".Activities.Expreso.Sab_Dom_Fer_Vuelta" />
+        <activity android:name=".Activities.Expreso.Sab_Dom_Fer_Ida" />
+        <activity android:name=".Activities.Expreso.ExpresoActivity" />
+        <activity android:name=".Activities.Expreso.Ex_Lun_Vier_Vuelta" />
+        <activity android:name=".Activities.Expreso.Ex_Lun_Vier_Ida" />
+        <activity
+            android:name=".Activities.Robert.Sab_Vuelta"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Activities.Robert.Dom_Fer_Vuelta"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Activities.Robert.Dom_Fer_Ida"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Activities.Robert.RobertActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Activities.Robert.Lun_Vier_Ida"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Activities.Robert.Lun_vier_Vuelta"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Activities.Robert.Sab_ida"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Activities.MainActivity"
+            tools:ignore="InnerclassSeparator">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#546E7A"
+    tools:context=".Activities.Expreso_UNC.ExpresoUNCActivity">
+
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:background="@drawable/boton_redondeado"
+        android:text=" Lunes-Viernes "
+        android:textColor="#CFD8DC"
+        android:textSize="20dp">
+
+    </TextView>
+
+    <Spinner
+        android:id="@+id/spinner_recorrido"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text"
+        android:popupBackground="#607D8B"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp">
+
+    </Spinner>
+
+
+
+</RelativeLayout>

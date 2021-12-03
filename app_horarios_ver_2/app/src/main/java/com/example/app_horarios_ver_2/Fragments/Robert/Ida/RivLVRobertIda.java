@@ -1,0 +1,91 @@
+package com.example.app_horarios_ver_2.Fragments.Robert.Ida;
+
+import android.database.Cursor;
+import android.database.SQLException;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.example.app_horarios_ver_2.Adapters.ScheduleAdapter;
+import com.example.app_horarios_ver_2.Data_Base.DatabaseHelper;
+import com.example.app_horarios_ver_2.Item.Item;
+import com.example.app_horarios_ver_2.OnTapListener;
+import com.example.app_horarios_ver_2.R;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class RivLVRobertIda extends Fragment {
+
+    private RecyclerView recyclerView;
+    private DatabaseHelper databaseHelper;
+    private ArrayList<Item> arrayList = new ArrayList<Item>();
+    private Cursor cursor;
+    private ScheduleAdapter adapter;
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        // Inflate the layout for this fragment
+        ViewGroup viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_riv_ida_lvrobert, container, false);
+        recyclerView = (RecyclerView) viewGroup.findViewById(R.id.recycler_Rvia);
+        arrayList.clear();
+        loadDatabase();
+        return viewGroup;
+    }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+    }
+
+    public void loadDatabase() {
+        databaseHelper = new DatabaseHelper(getContext());
+        try {
+
+            databaseHelper.checkAndCopyDatabase();
+            databaseHelper.openDatabase();
+        } catch (SQLException  e) {
+            e.printStackTrace();
+        }
+        try {
+             cursor = databaseHelper.QueryData("select * from RobertIda");
+            if (cursor != null) {
+                if (cursor.moveToFirst()) {
+                    do {
+                        Item item = new Item();
+                        //item.setId(cursor.getInt(0));
+                        item.setTime(cursor.getString(1));
+                        arrayList.add(item);
+                    } while (cursor.moveToNext());
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        adapter = new ScheduleAdapter(getActivity(), arrayList);
+        adapter.setOnTapListener(new OnTapListener() {
+            @Override
+            public void OnTapView(int position) {
+                Toast.makeText(getContext(), "Click to" + position, Toast.LENGTH_LONG).show();
+            }
+        });
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(adapter);
+    }
+
+}

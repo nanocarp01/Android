@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="posicionL">
+        <item>Posicion de Ladrillo</item>
+        <item>Canto</item>
+        <item>Soga</item>
+        <item>Cabeza</item>
+    </string-array>
+
+
+
+</resources>
